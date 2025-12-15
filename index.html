@@ -22,12 +22,34 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  flex-wrap: wrap; /* allows wrapping to prevent overflow */
   padding:18px 28px;
-  z-index:999
+  z-index:999;
+  flex-wrap:wrap;
 }
 body.dark nav{background:rgba(2,6,23,.95)}
-nav a{margin-left:20px;font-weight:600}
+
+nav strong{font-size:1.2rem}
+
+/* RIGHT NAV LINKS + TOGGLE */
+.nav-right{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  max-width:100%;
+  justify-content:flex-end;
+}
+
+/* NAV LINKS */
+.nav-links{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.nav-links a{
+  margin-left:20px;
+  font-weight:600;
+  white-space:nowrap;
+}
 
 /* HAMBURGER */
 .hamburger{
@@ -37,15 +59,11 @@ nav a{margin-left:20px;font-weight:600}
   padding:8px;
 }
 
-/* NAV LINKS */
-.nav-links{
-  display:flex;
-  align-items:center;
-  flex-wrap: wrap; /* prevents theme switch overflow */
+/* THEME TOGGLE */
+.theme-switch{
+  margin-left:16px;
+  flex-shrink:0;
 }
-
-/* THEME SLIDER */
-.theme-switch{margin-left:16px} /* smaller margin to prevent overflow */
 .theme-switch input{display:none}
 .theme-switch label{
   width:58px;height:30px;background:#c7d2fe;
@@ -137,29 +155,29 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
 @media(max-width:768px){
   .hamburger{display:block}
 
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:70px;
-    right:0;
-    left:0;
-    background:white;
-    padding:20px;
-    border-radius:16px;
+  .nav-right{
     flex-direction:column;
     align-items:flex-start;
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    width:100%;
   }
-  body.dark .nav-links{background:#020617}
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    margin-bottom:10px;
+  }
+
+  .nav-links.active{display:flex}
+
   .nav-links a{
     margin:10px 0;
   }
-  .nav-links.active{display:flex}
 
   .theme-switch{
-    margin:10px 0 0 0;
-    align-self:flex-start;
+    margin:0 0 10px 0;
   }
+
   .theme-switch label{
     width:50px;
     height:28px;
@@ -188,11 +206,12 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
 
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="case-studies.html">Case Studies</a>
-    <a href="blogs.html">Blogs</a>
-
+  <div class="nav-right">
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="blogs.html">Blogs</a>
+    </div>
     <div class="theme-switch">
       <input type="checkbox" id="toggle">
       <label for="toggle"></label>
