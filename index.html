@@ -22,7 +22,6 @@ nav{
   padding:16px 32px;z-index:999
 }
 body.dark nav{background:rgba(2,6,23,.9)}
-
 nav a{margin-left:22px;font-weight:600}
 
 .container{max-width:1150px;margin:auto;padding:120px 24px}
@@ -31,13 +30,11 @@ nav a{margin-left:22px;font-weight:600}
 .theme-switch input{display:none}
 .theme-switch label{
   width:58px;height:30px;background:#c7d2fe;
-  border-radius:50px;display:block;cursor:pointer;
-  position:relative
+  border-radius:50px;cursor:pointer;position:relative
 }
 .theme-switch label::after{
-  content:'☀';width:24px;height:24px;
-  background:white;border-radius:50%;
-  position:absolute;top:3px;left:3px;
+  content:'☀';width:24px;height:24px;background:white;
+  border-radius:50%;position:absolute;top:3px;left:3px;
   display:flex;align-items:center;justify-content:center;
   transition:.3s
 }
@@ -68,21 +65,22 @@ h2{margin:80px 0 24px;border-left:6px solid #2563eb;padding-left:14px}
 body.dark .card{background:#020617}
 
 .skill{margin-bottom:18px}
-.skill-bar{
-  height:14px;background:#e5e7eb;
-  border-radius:20px;overflow:hidden;margin-top:6px
-}
+.skill-bar{height:14px;background:#e5e7eb;border-radius:20px}
 .skill-bar span{
   display:block;height:100%;width:0;
   background:#2563eb;border-radius:20px;
   transition:2s
 }
 
+.icon{
+  width:22px;height:22px;
+  vertical-align:middle;margin-right:10px
+}
+
 .btn{
   display:inline-block;margin-top:22px;
   background:#0f172a;color:white;
-  padding:14px 28px;border-radius:14px;
-  font-weight:600
+  padding:14px 28px;border-radius:14px;font-weight:600
 }
 body.dark .btn{background:white;color:#020617}
 
@@ -90,8 +88,7 @@ body.dark .btn{background:white;color:#020617}
   position:fixed;bottom:28px;right:28px;
   background:#2563eb;color:white;
   padding:16px 22px;border-radius:18px;
-  font-weight:600;box-shadow:0 20px 40px rgba(0,0,0,.25);
-  z-index:1000
+  font-weight:600;z-index:1000
 }
 
 footer{text-align:center;margin:90px 0 40px;opacity:.6}
@@ -125,6 +122,7 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
 
 <div class="container">
 
+<!-- PROFILE -->
 <header>
   <div>
     <h1>Ashay Kamdar</h1>
@@ -138,66 +136,70 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
   <img src="profile.jpg" alt="Profile Photo">
 </header>
 
-<h2>Skills</h2>
-<div class="card">
-  <div class="skill">Product Management<div class="skill-bar"><span data-width="90%"></span></div></div>
-  <div class="skill">User Research & UX<div class="skill-bar"><span data-width="85%"></span></div></div>
-  <div class="skill">Analytics · SQL · BI<div class="skill-bar"><span data-width="80%"></span></div></div>
-  <div class="skill">Stakeholder Management<div class="skill-bar"><span data-width="78%"></span></div></div>
-  <div class="skill">Agile · PRDs · Roadmaps<div class="skill-bar"><span data-width="82%"></span></div></div>
-</div>
-
+<!-- WORK EXPERIENCE (MOVED UP) -->
 <h2>Work Experience</h2>
 
 <div class="card">
 <h3>ASBL — Associate Product Manager Intern</h3>
-<p><em>Aug 2025 – Present</em></p>
 <ul>
-<li>Owned end-to-end delivery of internal platforms across planning, scheduling, contracts and manpower workflows</li>
-<li>Led UX and process redesigns reducing task completion time by ~30%</li>
-<li>Reduced operational inefficiencies by ~40% through automation and system consolidation</li>
-<li>Worked closely with engineering, QA, operations and leadership on prioritization and releases</li>
-<li>Improved system stability and reduced recurring issues by ~40%</li>
+<li>Owned end-to-end delivery of internal platforms across planning, scheduling, contracts and manpower</li>
+<li>Reduced task completion time by ~30% via UX redesign</li>
+<li>Improved operational efficiency by ~40%</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>UPivot — Associate Product Manager Intern</h3>
-<p><em>May 2025 – Jul 2025</em></p>
 <ul>
-<li>Conducted 50+ user interviews and synthesized insights into personas and journey maps</li>
-<li>Defined MVP scope, wrote PRDs and launched AI resume screening and feedback tools</li>
-<li>Ran A/B tests improving feature clarity and reducing drop-offs by ~25%</li>
-<li>Improved engagement by ~28% and onboarded 1,200+ users</li>
+<li>Conducted 50+ user interviews and built personas</li>
+<li>Improved engagement by ~28%</li>
+<li>Onboarded 1,200+ users</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>Vedanta Resources — Business Analyst (CMO’s Office)</h3>
-<p><em>Aug 2023 – Feb 2025</em></p>
+<h3>Vedanta Resources — Business Analyst</h3>
 <ul>
-<li>Analyzed large-scale sales, pricing and customer data using SQL and Excel</li>
-<li>Drove ~5% market share growth through market and competitive analysis</li>
-<li>Automated MCX–LME arbitrage tracking improving profitability by ~23%</li>
-<li>Built BI dashboards and executive decks for CXOs and investors</li>
-<li>Automated pricing and order workflows improving efficiency by ~37%</li>
+<li>Drove ~5% market share growth</li>
+<li>Improved profitability by ~23%</li>
+<li>Automated pricing and order workflows</li>
 </ul>
 </div>
 
+<!-- SKILLS -->
+<h2>Skills</h2>
+<div class="card">
+  <div class="skill">Product Management<div class="skill-bar"><span data-width="90%"></span></div></div>
+  <div class="skill">User Research<div class="skill-bar"><span data-width="85%"></span></div></div>
+  <div class="skill">Analytics & SQL<div class="skill-bar"><span data-width="80%"></span></div></div>
+</div>
+
+<!-- EDUCATION -->
 <h2>Education</h2>
 <div class="card">
-<p><strong>MBA</strong> — FLAME University (2023)</p>
-<p><strong>B.Tech (Computer Engineering)</strong> — CHARUSAT University (2021)</p>
+<p><strong>MBA</strong> — FLAME University</p>
+<p><strong>B.Tech (Computer Engineering)</strong> — CHARUSAT University</p>
 </div>
 
+<!-- CONTACT WITH ICONS -->
 <h2>Contact</h2>
 <div class="card">
-<p>📧 <a href="mailto:ashaykamdar1812@gmail.com">ashaykamdar1812@gmail.com</a></p>
-<p>🔗 <a href="https://linkedin.com/in/ashaykamdar" target="_blank">LinkedIn</a></p>
+<p>
+<svg class="icon" viewBox="0 0 24 24">
+<path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6Zm0 4-8 5-8-5"/>
+</svg>
+<a href="mailto:ashaykamdar1812@gmail.com">ashaykamdar1812@gmail.com</a>
+</p>
+
+<p>
+<svg class="icon" viewBox="0 0 24 24">
+<path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 0 0 5ZM3 8.98h3.96V21H3ZM9.5 8.98H13v1.64h.05c.49-.93 1.68-1.9 3.45-1.9 3.69 0 4.37 2.43 4.37 5.6V21h-3.97v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9.5Z"/>
+</svg>
+<a href="https://linkedin.com/in/ashaykamdar" target="_blank">LinkedIn</a>
+</p>
 </div>
 
 <footer>© 2025 Ashay Kamdar</footer>
-
 </div>
 
 <script>
@@ -205,14 +207,12 @@ document.getElementById('toggle').addEventListener('change',()=>{
   document.body.classList.toggle('dark')
   document.body.classList.toggle('light')
 })
-
-window.addEventListener('load',()=>{
-  document.querySelectorAll('.skill-bar span').forEach(bar=>{
-    bar.style.width = bar.dataset.width
+window.onload=()=>{
+  document.querySelectorAll('.skill-bar span').forEach(b=>{
+    b.style.width=b.dataset.width
   })
-})
+}
 </script>
 
 </body>
 </html>
-
