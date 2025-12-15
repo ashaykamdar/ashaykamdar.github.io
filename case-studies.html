@@ -1,1 +1,217 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies | Ashay Kamdar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#ffffff;color:#0f172a}
+a{text-decoration:none;color:inherit}
+
+/* NAVBAR */
+nav{
+  position:fixed;top:0;width:100%;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 28px;z-index:999
+}
+nav strong{font-size:1.2rem}
+
+/* NAV LINKS */
+.nav-links{display:flex;gap:22px}
+.nav-links a{font-weight:600}
+
+/* HAMBURGER */
+.hamburger{display:none;font-size:26px;cursor:pointer}
+
+/* CONTAINER */
+.container{max-width:1150px;margin:auto;padding:140px 22px 60px}
+
+/* PAGE HEADER */
+.page-header{
+  margin-bottom:60px;
+}
+.page-header h1{
+  font-size:3rem;
+  margin-bottom:12px;
+}
+.page-header p{
+  font-size:1.1rem;
+  max-width:720px;
+  line-height:1.6;
+  opacity:.85;
+}
+
+/* CASE STUDY GRID */
+.case-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:28px;
+}
+
+/* CASE CARD */
+.case-card{
+  background:#ffffff;
+  border-radius:20px;
+  padding:32px;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  transition:.3s;
+}
+.case-card:hover{
+  transform:translateY(-6px);
+}
+
+.tag{
+  display:inline-block;
+  background:#e0e7ff;
+  color:#1e3a8a;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:.85rem;
+  font-weight:600;
+  width:max-content;
+}
+
+.case-card h3{
+  font-size:1.35rem;
+}
+
+.case-card p{
+  line-height:1.6;
+  opacity:.9;
+}
+
+.metrics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:10px;
+}
+.metric{
+  background:#f8fafc;
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:600;
+  font-size:.9rem;
+}
+
+/* CTA BUTTON */
+.case-btn{
+  margin-top:auto;
+  align-self:flex-start;
+  background:#0f172a;
+  color:white;
+  padding:12px 22px;
+  border-radius:14px;
+  font-weight:600;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-links{
+    display:none;
+    position:absolute;top:70px;right:20px;
+    background:white;padding:20px;
+    border-radius:16px;
+    flex-direction:column;
+    box-shadow:0 20px 40px rgba(0,0,0,.15)
+  }
+  .nav-links.active{display:flex}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <strong>Ashay Kamdar</strong>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="blogs.html">Blogs</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Case Studies</h1>
+  <p>
+    A selection of real-world product problems I worked on — from discovery and user research
+    to execution, experimentation, and measurable business impact.
+  </p>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="case-grid">
+
+  <!-- CASE 1 -->
+  <div class="case-card">
+    <span class="tag">Internal Platform · B2B</span>
+    <h3>Redesigning Planning & Scheduling Platform at ASBL</h3>
+    <p>
+      Led end-to-end redesign of internal planning and scheduling tools used by site operations teams,
+      focusing on usability, workflow efficiency, and adoption.
+    </p>
+    <div class="metrics">
+      <div class="metric">↓ 30% Task Time</div>
+      <div class="metric">↑ 40% Ops Efficiency</div>
+    </div>
+    <a class="case-btn" href="#">View Case Study</a>
+  </div>
+
+  <!-- CASE 2 -->
+  <div class="case-card">
+    <span class="tag">B2C · AI Product</span>
+    <h3>AI Resume Screening & Feedback Tool at UPivot</h3>
+    <p>
+      Worked on MVP definition and launch of AI-powered resume screening and feedback features
+      to improve job-seeker engagement and conversion.
+    </p>
+    <div class="metrics">
+      <div class="metric">50+ User Interviews</div>
+      <div class="metric">↑ 28% Engagement</div>
+    </div>
+    <a class="case-btn" href="#">View Case Study</a>
+  </div>
+
+  <!-- CASE 3 -->
+  <div class="case-card">
+    <span class="tag">Analytics · Enterprise</span>
+    <h3>Pricing & Arbitrage Automation at Vedanta</h3>
+    <p>
+      Built analytics workflows and automated MCX–LME arbitrage tracking to support pricing,
+      decision-making, and executive reporting.
+    </p>
+    <div class="metrics">
+      <div class="metric">↑ 23% Profitability</div>
+      <div class="metric">SQL + Dashboards</div>
+    </div>
+    <a class="case-btn" href="#">View Case Study</a>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
