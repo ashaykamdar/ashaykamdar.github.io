@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ashay Kamdar | Product Portfolio</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;transition:.4s}
-body.light{background:#ffffff;color:#0f172a}
-body.dark{background:#020617;color:#e5e7eb}
+body{font-family:Inter,sans-serif;background:#ffffff;color:#0f172a}
 a{text-decoration:none;color:inherit}
 
 /* NAVBAR */
@@ -18,62 +18,114 @@ nav{
   background:rgba(255,255,255,.95);
   backdrop-filter:blur(10px);
   display:flex;justify-content:space-between;align-items:center;
-  padding:18px 28px;z-index:999;transition:0.3s;
+  padding:18px 28px;z-index:999
 }
 nav strong{font-size:1.2rem}
 
 /* NAV LINKS */
-.nav-links{
-  display:flex;align-items:center;gap:20px;transition:0.3s;
-}
-.nav-links a{font-weight:600;white-space:nowrap;transition:0.3s}
+.nav-links{display:flex;gap:22px}
+.nav-links a{font-weight:600}
 
 /* HAMBURGER */
-.hamburger{display:none;font-size:26px;cursor:pointer;padding:8px}
+.hamburger{display:none;font-size:26px;cursor:pointer}
 
 /* CONTAINER */
-.container{max-width:1150px;margin:auto;padding:140px 22px 50px;}
+.container{max-width:1150px;margin:auto;padding:140px 22px 50px}
 
 /* HEADER */
 header{
   display:grid;grid-template-columns:1.2fr .8fr;
   gap:50px;align-items:center;
   background:linear-gradient(135deg,#2563eb,#4f46e5);
-  color:white;border-radius:24px;padding:70px;
-  transition:0.3s;
+  color:white;border-radius:24px;padding:70px
 }
-header div{transition:0.3s;}
 header img{
   width:260px;height:260px;border-radius:50%;
-  object-fit:cover;border:6px solid rgba(255,255,255,.4);
-  transition:0.3s;
+  object-fit:cover;border:6px solid rgba(255,255,255,.4)
 }
-h1{font-size:3.8rem;margin-bottom:20px}
-h2{margin:80px 0 24px;border-left:6px solid #2563eb;padding-left:14px;}
+h1{font-size:3.6rem;margin-bottom:18px}
+header p{line-height:1.6}
 
-/* CARDS */
-.card{background:#ffffff;padding:34px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.08);margin-bottom:30px;transition:0.3s;}
-body.dark .card{background:#020617}
+/* BUTTON */
+.btn{
+  display:inline-block;margin-top:26px;
+  background:#0f172a;color:white;
+  padding:16px 32px;border-radius:16px;
+  font-weight:600
+}
+
+/* SECTION HEAD */
+h2{
+  margin:90px 0 28px;
+  border-left:6px solid #2563eb;
+  padding-left:14px
+}
+
+/* TIMELINE */
+.timeline{
+  position:relative;
+  padding-left:40px
+}
+.timeline::before{
+  content:'';
+  position:absolute;left:12px;top:0;bottom:0;
+  width:3px;background:#c7d2fe
+}
+.timeline-item{
+  position:relative;
+  margin-bottom:40px
+}
+.timeline-item::before{
+  content:'';
+  position:absolute;left:-33px;top:6px;
+  width:14px;height:14px;
+  background:#2563eb;border-radius:50%
+}
+.card{
+  background:#ffffff;padding:30px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08)
+}
 
 /* SKILLS */
-.skill{margin-bottom:20px}
-.skill-bar{height:16px;background:#e5e7eb;border-radius:20px}
-.skill-bar span{display:block;height:100%;width:0;background:#2563eb;border-radius:20px;transition:width 2s ease;}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px
+}
+.skill-box{
+  background:#f8fafc;
+  padding:18px 20px;
+  border-radius:14px;
+  font-weight:600
+}
 
-/* BUTTONS */
-.btn{display:inline-block;margin-top:26px;background:#0f172a;color:white;padding:16px 32px;border-radius:16px;font-weight:600;transition:0.3s;}
-body.dark .btn{background:white;color:#020617}
+/* CONTACT */
+.contact-line{
+  display:flex;
+  gap:26px;
+  align-items:center;
+  flex-wrap:wrap;
+  font-weight:600
+}
+.icon{width:20px;height:20px;vertical-align:middle;margin-right:8px}
 
-/* FLOATING CHAT (DESKTOP) */
-.floating-chat{position:fixed;bottom:28px;right:28px;background:#2563eb;color:white;padding:16px 22px;border-radius:18px;font-weight:600;z-index:1000;transition:0.3s;}
+/* CHAT */
+.floating-chat{
+  position:fixed;bottom:28px;right:28px;
+  background:#2563eb;color:white;
+  padding:16px 22px;border-radius:18px;
+  font-weight:600;z-index:1000
+}
+.mobile-chat{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;
+  background:#2563eb;color:white;
+  text-align:center;padding:18px;
+  font-weight:700;z-index:1000
+}
 
-/* MOBILE STICKY CHAT */
-.mobile-chat{display:none;position:fixed;bottom:0;left:0;right:0;max-width:100%;box-sizing:border-box;background:#2563eb;color:white;text-align:center;padding:18px;font-weight:700;z-index:1000;}
-
-/* CONTACT ICONS */
-.icon{width:22px;height:22px;vertical-align:middle;margin-right:10px}
-
-footer{text-align:center;margin:90px 0 40px;opacity:.6;transition:0.3s;}
+footer{text-align:center;margin:90px 0 40px;opacity:.6}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -82,107 +134,118 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6;transition:0.3s;}
 }
 
 @media(max-width:768px){
-  /* Hamburger on top-right */
-  .hamburger{display:block;position:absolute;top:18px;right:28px;z-index:1001;}
-  
+  .hamburger{display:block}
   .nav-links{
-    display:flex;flex-direction:column;position:absolute;top:60px;
-    right:-100%;width:220px;background:rgba(255,255,255,0.95);
-    padding:20px;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,.15);
-    transition:right 0.3s ease;gap:14px;
+    display:none;
+    position:absolute;top:70px;right:20px;
+    background:white;padding:20px;
+    border-radius:16px;
+    flex-direction:column;
+    box-shadow:0 20px 40px rgba(0,0,0,.15)
   }
-  .nav-links.active{right:28px}
-  
-  nav>div{display:flex;width:100%;justify-content:flex-end;}
-  
-  header{text-align:center;grid-template-columns:1fr;margin-top:20px;}
-  header div{margin:auto}
-  header img{margin:auto;margin-top:20px}
+  .nav-links.active{display:flex}
   .floating-chat{display:none}
   .mobile-chat{display:block}
 }
 </style>
 </head>
-<body class="light">
 
-<!-- NAV -->
+<body>
+
 <nav>
   <strong>Ashay Kamdar</strong>
-  <div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="blogs.html">Blogs</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="nav-links" id="navLinks">
+    <a href="#">Home</a>
+    <a href="#">Case Studies</a>
+    <a href="#">Blogs</a>
   </div>
 </nav>
 
-<!-- CHAT BUTTONS -->
 <a class="floating-chat" href="https://calendly.com/your-link" target="_blank">💬 Let’s Chat</a>
 <a class="mobile-chat" href="https://calendly.com/your-link" target="_blank">💬 Let’s Chat</a>
 
 <div class="container">
+
 <header>
   <div>
     <h1>Ashay Kamdar</h1>
-    <p>Product-focused professional with experience across B2C and enterprise products. Strong in problem discovery, user research, execution, and driving measurable business impact.</p>
+    <p>
+      Product-focused professional with experience across B2C and enterprise products.
+      Strong in problem discovery, user research, execution, and driving measurable business impact.
+    </p>
     <a href="resume.pdf" download class="btn">⬇ Download Resume</a>
   </div>
   <img src="profile.jpg">
 </header>
 
 <h2>Work Experience</h2>
-<div class="card">
-<h3>ASBL — Associate Product Manager Intern</h3>
-<ul>
-<li>Owned end-to-end internal platforms across planning, scheduling & contracts</li>
-<li>Reduced task completion time by ~30% via UX redesign</li>
-<li>Improved operational efficiency by ~40%</li>
-</ul>
-</div>
+<div class="timeline">
 
-<div class="card">
-<h3>UPivot — Associate Product Manager Intern</h3>
-<ul>
-<li>Conducted 50+ user interviews</li>
-<li>Improved engagement by ~28%</li>
-<li>Onboarded 1,200+ users</li>
-</ul>
-</div>
+  <div class="timeline-item">
+    <div class="card">
+      <h3>ASBL — Associate Product Manager Intern</h3>
+      <ul>
+        <li>Owned end-to-end internal platforms across planning, scheduling & contracts</li>
+        <li>Reduced task completion time by ~30% via UX redesign</li>
+        <li>Improved operational efficiency by ~40%</li>
+      </ul>
+    </div>
+  </div>
 
-<div class="card">
-<h3>Vedanta Resources — Business Analyst</h3>
-<ul>
-<li>Drove ~5% market share growth</li>
-<li>Improved profitability by ~23%</li>
-<li>Automated pricing workflows</li>
-</ul>
+  <div class="timeline-item">
+    <div class="card">
+      <h3>UPivot — Associate Product Manager Intern</h3>
+      <ul>
+        <li>Conducted 50+ user interviews</li>
+        <li>Improved engagement by ~28%</li>
+        <li>Onboarded 1,200+ users</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="card">
+      <h3>Vedanta Resources — Business Analyst</h3>
+      <ul>
+        <li>Drove ~5% market share growth</li>
+        <li>Improved profitability by ~23%</li>
+        <li>Automated pricing workflows</li>
+      </ul>
+    </div>
+  </div>
+
 </div>
 
 <h2>Skills</h2>
-<div class="card">
-<div class="skill">Product Management<div class="skill-bar"><span data-width="90%"></span></div></div>
-<div class="skill">User Research<div class="skill-bar"><span data-width="85%"></span></div></div>
-<div class="skill">Analytics & SQL<div class="skill-bar"><span data-width="80%"></span></div></div>
-</div>
-
-<h2>Education</h2>
-<div class="card">
-<p><strong>MBA</strong> — FLAME University</p>
-<p><strong>B.Tech (Computer Engineering)</strong> — CHARUSAT University</p>
+<div class="skills-grid">
+  <div class="skill-box">Product Discovery</div>
+  <div class="skill-box">User Research & Interviews</div>
+  <div class="skill-box">PRDs & Requirement Writing</div>
+  <div class="skill-box">Roadmapping</div>
+  <div class="skill-box">Agile & Scrum</div>
+  <div class="skill-box">Stakeholder Management</div>
+  <div class="skill-box">UX Collaboration</div>
+  <div class="skill-box">Data Analysis</div>
+  <div class="skill-box">SQL & Dashboards</div>
+  <div class="skill-box">Experimentation & A/B Testing</div>
+  <div class="skill-box">Go-to-Market</div>
+  <div class="skill-box">Metrics & OKRs</div>
 </div>
 
 <h2>Contact</h2>
 <div class="card">
-<p>
-<svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6Zm0 4-8 5-8-5"/></svg>
-<a href="mailto:ashaykamdar1812@gmail.com">ashaykamdar1812@gmail.com</a>
-</p>
-<p>
-<svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 0 0 5ZM3 8.98h3.96V21H3ZM9.5 8.98H13v1.64h.05c.49-.93 1.68-1.9 3.45-1.9 3.69 0 4.37 2.43 4.37 5.6V21h-3.97v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9.5Z"/></svg>
-<a href="https://linkedin.com/in/ashaykamdar" target="_blank">LinkedIn</a>
-</p>
+  <div class="contact-line">
+    <span>
+      <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6Z"/></svg>
+      <a href="mailto:ashaykamdar1812@gmail.com">ashaykamdar1812@gmail.com</a>
+    </span>
+
+    <span>
+      <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 0 0 5Z"/></svg>
+      <a href="https://linkedin.com/in/ashaykamdar" target="_blank">LinkedIn</a>
+    </span>
+  </div>
 </div>
 
 <footer>© 2025 Ashay Kamdar</footer>
@@ -192,11 +255,7 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6;transition:0.3s;}
 function toggleMenu(){
   document.getElementById('navLinks').classList.toggle('active');
 }
-window.onload=()=>{
-  document.querySelectorAll('.skill-bar span').forEach(bar=>{
-    bar.style.width = bar.dataset.width;
-  });
-};
 </script>
+
 </body>
 </html>
