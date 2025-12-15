@@ -24,11 +24,9 @@ nav{
   align-items:center;
   padding:18px 28px;
   z-index:999;
-  position:relative;
   transition:0.3s;
 }
 body.dark nav{background:rgba(2,6,23,.95)}
-
 nav strong{font-size:1.2rem}
 
 /* NAV LINKS */
@@ -53,7 +51,7 @@ nav strong{font-size:1.2rem}
   padding:8px;
 }
 
-/* THEME TOGGLE INSIDE NAVBAR */
+/* THEME TOGGLE */
 .theme-switch{
   position:absolute;
   right:28px;
@@ -79,7 +77,7 @@ nav strong{font-size:1.2rem}
 }
 
 /* CONTAINER */
-.container{max-width:1150px;margin:auto;padding:120px 22px}
+.container{max-width:1150px;margin:auto;padding:140px 22px 50px;}
 
 /* HEADER */
 header{
@@ -94,7 +92,7 @@ header img{
   object-fit:cover;border:6px solid rgba(255,255,255,.4);
   transition:0.3s;
 }
-
+header div{transition:0.3s;}
 h1{font-size:3.8rem; transition:0.3s;}
 h2{margin:80px 0 24px;border-left:6px solid #2563eb;padding-left:14px; transition:0.3s;}
 
@@ -121,8 +119,7 @@ body.dark .card{background:#020617}
   display:inline-block;margin-top:26px;
   background:#0f172a;color:white;
   padding:16px 32px;border-radius:16px;
-  font-weight:600;
-  transition:0.3s;
+  font-weight:600
 }
 body.dark .btn{background:white;color:#020617}
 
@@ -138,7 +135,9 @@ body.dark .btn{background:white;color:#020617}
 /* MOBILE STICKY CHAT */
 .mobile-chat{
   display:none;
-  position:fixed;bottom:0;left:0;width:100%;
+  position:fixed;bottom:0;left:0;right:0;
+  max-width:100%;
+  box-sizing:border-box;
   background:#2563eb;color:white;
   text-align:center;padding:18px;
   font-weight:700;z-index:1000;
@@ -174,15 +173,24 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6; transition:0.3s;}
     transition:right 0.3s ease;
   }
   body.dark .nav-links{background:#020617}
-
   .nav-links a{margin:14px 0;transition:0.3s;}
   .nav-links.active{right:28px}
 
+  /* Move theme toggle above navbar */
   .theme-switch{
-    position:absolute;
-    top:18px;
-    right:28px;
+    position:fixed;
+    top:10px;
+    right:20px;
+    transform:none;
+    z-index:1001;
   }
+
+  /* Center header content */
+  header{
+    text-align:center;
+  }
+  header div{margin:auto;}
+  header img{margin:auto;margin-top:20px;}
 
   .floating-chat{display:none}
   .mobile-chat{display:block}
@@ -195,21 +203,19 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6; transition:0.3s;}
 <!-- NAV -->
 <nav>
   <strong>Ashay Kamdar</strong>
-
   <div class="hamburger" onclick="toggleMenu()">☰</div>
-
   <div class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="blogs.html">Blogs</a>
   </div>
-
-  <!-- THEME TOGGLE -->
-  <div class="theme-switch">
-    <input type="checkbox" id="toggle">
-    <label for="toggle"></label>
-  </div>
 </nav>
+
+<!-- THEME TOGGLE -->
+<div class="theme-switch">
+  <input type="checkbox" id="toggle">
+  <label for="toggle"></label>
+</div>
 
 <!-- CHAT BUTTONS -->
 <a class="floating-chat" href="https://calendly.com/your-link" target="_blank">💬 Let’s Chat</a>
