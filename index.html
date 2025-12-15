@@ -14,145 +14,154 @@ body.light{background:#ffffff;color:#0f172a}
 body.dark{background:#020617;color:#e5e7eb}
 a{text-decoration:none;color:inherit}
 
+/* NAVBAR */
 nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:rgba(255,255,255,.9);
+  position:fixed;top:0;width:100%;
+  background:rgba(255,255,255,.95);
   backdrop-filter:blur(10px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 32px;
-  z-index:999;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 28px;z-index:999
 }
 body.dark nav{background:rgba(2,6,23,.95)}
+nav a{margin-left:26px;font-weight:600}
 
-nav a{margin-left:22px;font-weight:600}
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+  padding:8px;
+}
 
-.container{max-width:1150px;margin:auto;padding:120px 24px}
-
-/* THEME SLIDER (FIXED INSIDE NAV) */
-.theme-switch{
+/* NAV LINKS */
+.nav-links{
   display:flex;
   align-items:center;
-  margin-left:22px;
 }
+
+/* THEME SLIDER */
+.theme-switch{margin-left:26px}
 .theme-switch input{display:none}
 .theme-switch label{
   width:58px;height:30px;background:#c7d2fe;
-  border-radius:50px;cursor:pointer;position:relative;
+  border-radius:50px;cursor:pointer;position:relative
 }
 .theme-switch label::after{
-  content:'☀';
-  width:24px;height:24px;background:white;
-  border-radius:50%;
-  position:absolute;top:3px;left:3px;
+  content:'☀';width:24px;height:24px;background:white;
+  border-radius:50%;position:absolute;top:3px;left:3px;
   display:flex;align-items:center;justify-content:center;
-  transition:.3s;
+  transition:.3s
 }
 .theme-switch input:checked+label{background:#2563eb}
 .theme-switch input:checked+label::after{
-  transform:translateX(28px);content:'🌙';
+  transform:translateX(28px);content:'🌙'
 }
 
+/* CONTAINER */
+.container{max-width:1150px;margin:auto;padding:120px 22px}
+
+/* HEADER */
 header{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:50px;
-  align-items:center;
+  display:grid;grid-template-columns:1.2fr .8fr;
+  gap:50px;align-items:center;
   background:linear-gradient(135deg,#2563eb,#4f46e5);
-  color:white;
-  border-radius:24px;
-  padding:70px;
+  color:white;border-radius:24px;padding:70px
 }
 header img{
-  width:260px;height:260px;
-  border-radius:50%;
-  object-fit:cover;
-  border:6px solid rgba(255,255,255,.4);
+  width:260px;height:260px;border-radius:50%;
+  object-fit:cover;border:6px solid rgba(255,255,255,.4)
 }
 
 h1{font-size:3.8rem}
 h2{margin:80px 0 24px;border-left:6px solid #2563eb;padding-left:14px}
 
+/* CARDS */
 .card{
-  background:#ffffff;
-  padding:32px;
-  border-radius:20px;
+  background:#ffffff;padding:34px;border-radius:20px;
   box-shadow:0 15px 40px rgba(0,0,0,.08);
-  margin-bottom:30px;
+  margin-bottom:30px
 }
 body.dark .card{background:#020617}
 
-.skill{margin-bottom:18px}
-.skill-bar{
-  height:14px;
-  background:#e5e7eb;
-  border-radius:20px;
-  overflow:hidden;
-}
+/* SKILLS */
+.skill{margin-bottom:20px}
+.skill-bar{height:16px;background:#e5e7eb;border-radius:20px}
 .skill-bar span{
-  display:block;
-  height:100%;
-  width:0;
-  background:#2563eb;
-  border-radius:20px;
-  transition:2s;
+  display:block;height:100%;width:0;
+  background:#2563eb;border-radius:20px;
+  transition:2s
 }
 
-.icon{
-  width:22px;
-  height:22px;
-  vertical-align:middle;
-  margin-right:10px;
-}
-
+/* BUTTONS */
 .btn{
-  display:inline-block;
-  margin-top:22px;
-  background:#0f172a;
-  color:white;
-  padding:14px 28px;
-  border-radius:14px;
-  font-weight:600;
+  display:inline-block;margin-top:26px;
+  background:#0f172a;color:white;
+  padding:16px 32px;border-radius:16px;
+  font-weight:600
 }
 body.dark .btn{background:white;color:#020617}
 
+/* FLOATING CHAT (DESKTOP) */
 .floating-chat{
-  position:fixed;
-  bottom:28px;
-  right:28px;
-  background:#2563eb;
-  color:white;
-  padding:16px 22px;
-  border-radius:18px;
-  font-weight:600;
-  box-shadow:0 20px 40px rgba(0,0,0,.25);
-  z-index:1000;
+  position:fixed;bottom:28px;right:28px;
+  background:#2563eb;color:white;
+  padding:16px 22px;border-radius:18px;
+  font-weight:600;z-index:1000
 }
+
+/* MOBILE STICKY CHAT */
+.mobile-chat{
+  display:none;
+  position:fixed;bottom:0;left:0;width:100%;
+  background:#2563eb;color:white;
+  text-align:center;padding:18px;
+  font-weight:700;z-index:1000
+}
+
+/* CONTACT ICONS */
+.icon{width:22px;height:22px;vertical-align:middle;margin-right:10px}
 
 footer{text-align:center;margin:90px 0 40px;opacity:.6}
 
+/* RESPONSIVE */
 @media(max-width:900px){
-  header{grid-template-columns:1fr;text-align:center}
+  header{grid-template-columns:1fr;text-align:center;padding:50px}
   header img{margin:auto}
+}
+
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-links{
+    display:none;
+    position:absolute;top:70px;right:20px;
+    background:white;padding:20px 26px;
+    border-radius:16px;
+    flex-direction:column;
+    box-shadow:0 20px 40px rgba(0,0,0,.15)
+  }
+  body.dark .nav-links{background:#020617}
+  .nav-links a{margin:14px 0}
+  .nav-links.active{display:flex}
+
+  .floating-chat{display:none}
+  .mobile-chat{display:block}
 }
 </style>
 </head>
 
 <body class="light">
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
   <strong>Ashay Kamdar</strong>
 
-  <div style="display:flex;align-items:center;">
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navLinks">
     <a href="index.html">Home</a>
     <a href="case-studies.html">Case Studies</a>
     <a href="blogs.html">Blogs</a>
 
-    <!-- THEME SLIDER -->
     <div class="theme-switch">
       <input type="checkbox" id="toggle">
       <label for="toggle"></label>
@@ -160,92 +169,74 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
   </div>
 </nav>
 
-<!-- FLOATING CHAT -->
-<a class="floating-chat" href="https://calendly.com/your-link" target="_blank">
-  💬 Let’s Chat
-</a>
+<!-- CHAT BUTTONS -->
+<a class="floating-chat" href="https://calendly.com/your-link" target="_blank">💬 Let’s Chat</a>
+<a class="mobile-chat" href="https://calendly.com/your-link" target="_blank">💬 Let’s Chat</a>
 
 <div class="container">
 
-<!-- PROFILE -->
 <header>
   <div>
     <h1>Ashay Kamdar</h1>
     <p>
-      Product-focused professional with experience across B2C and enterprise
-      products. Strong in problem discovery, user research, execution, and
-      driving measurable business impact.
+      Product-focused professional with experience across B2C and enterprise products.
+      Strong in problem discovery, execution, and driving measurable impact.
     </p>
     <a href="resume.pdf" download class="btn">⬇ Download Resume</a>
   </div>
-  <img src="profile.jpg" alt="Profile Photo">
+  <img src="profile.jpg">
 </header>
 
-<!-- WORK EXPERIENCE -->
 <h2>Work Experience</h2>
 
 <div class="card">
 <h3>ASBL — Associate Product Manager Intern</h3>
 <ul>
-<li>Owned end-to-end delivery of internal platforms across planning, scheduling, contracts and manpower workflows</li>
-<li>Led UX and process redesigns reducing task completion time by ~30%</li>
+<li>Owned end-to-end internal platforms across planning, scheduling & contracts</li>
+<li>Reduced task completion time by ~30% via UX redesign</li>
 <li>Improved operational efficiency by ~40%</li>
-<li>Worked closely with engineering, QA, operations and leadership</li>
-<li>Improved system stability and reduced recurring issues by ~40%</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>UPivot — Associate Product Manager Intern</h3>
 <ul>
-<li>Conducted 50+ user interviews and synthesized insights into personas and journey maps</li>
-<li>Defined MVP scope, wrote PRDs and launched AI resume screening tools</li>
-<li>Ran A/B tests reducing drop-offs by ~25%</li>
-<li>Improved engagement by ~28% and onboarded 1,200+ users</li>
+<li>Conducted 50+ user interviews</li>
+<li>Improved engagement by ~28%</li>
+<li>Onboarded 1,200+ users</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>Vedanta Resources — Business Analyst (CMO’s Office)</h3>
+<h3>Vedanta Resources — Business Analyst</h3>
 <ul>
-<li>Analyzed large-scale sales, pricing and customer data using SQL and Excel</li>
-<li>Drove ~5% market share growth through competitive analysis</li>
-<li>Automated MCX–LME arbitrage tracking improving profitability by ~23%</li>
-<li>Built BI dashboards and CXO-level presentations</li>
-<li>Automated pricing and order workflows improving efficiency by ~37%</li>
+<li>Drove ~5% market share growth</li>
+<li>Improved profitability by ~23%</li>
+<li>Automated pricing workflows</li>
 </ul>
 </div>
 
-<!-- SKILLS -->
 <h2>Skills</h2>
 <div class="card">
-  <div class="skill">Product Management<div class="skill-bar"><span data-width="90%"></span></div></div>
-  <div class="skill">User Research & UX<div class="skill-bar"><span data-width="85%"></span></div></div>
-  <div class="skill">Analytics · SQL · BI<div class="skill-bar"><span data-width="80%"></span></div></div>
-  <div class="skill">Stakeholder Management<div class="skill-bar"><span data-width="78%"></span></div></div>
+<div class="skill">Product Management<div class="skill-bar"><span data-width="90%"></span></div></div>
+<div class="skill">User Research<div class="skill-bar"><span data-width="85%"></span></div></div>
+<div class="skill">Analytics & SQL<div class="skill-bar"><span data-width="80%"></span></div></div>
 </div>
 
-<!-- EDUCATION -->
 <h2>Education</h2>
 <div class="card">
-<p><strong>MBA</strong> — FLAME University (2023)</p>
-<p><strong>B.Tech (Computer Engineering)</strong> — CHARUSAT University (2021)</p>
+<p><strong>MBA</strong> — FLAME University</p>
+<p><strong>B.Tech (Computer Engineering)</strong> — CHARUSAT University</p>
 </div>
 
-<!-- CONTACT -->
 <h2>Contact</h2>
 <div class="card">
 <p>
-<svg class="icon" viewBox="0 0 24 24">
-<path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6Zm0 4-8 5-8-5"/>
-</svg>
+<svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6Zm0 4-8 5-8-5"/></svg>
 <a href="mailto:ashaykamdar1812@gmail.com">ashaykamdar1812@gmail.com</a>
 </p>
-
 <p>
-<svg class="icon" viewBox="0 0 24 24">
-<path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 0 0 5ZM3 8.98h3.96V21H3ZM9.5 8.98H13v1.64h.05c.49-.93 1.68-1.9 3.45-1.9 3.69 0 4.37 2.43 4.37 5.6V21h-3.97v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9.5Z"/>
-</svg>
+<svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 0 0 5ZM3 8.98h3.96V21H3ZM9.5 8.98H13v1.64h.05c.49-.93 1.68-1.9 3.45-1.9 3.69 0 4.37 2.43 4.37 5.6V21h-3.97v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9.5Z"/></svg>
 <a href="https://linkedin.com/in/ashaykamdar" target="_blank">LinkedIn</a>
 </p>
 </div>
@@ -254,6 +245,10 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
 </div>
 
 <script>
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('active');
+}
+
 document.getElementById('toggle').addEventListener('change',()=>{
   document.body.classList.toggle('dark');
   document.body.classList.toggle('light');
