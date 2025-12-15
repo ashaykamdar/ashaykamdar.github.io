@@ -82,16 +82,18 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6;transition:0.3s;}
 }
 
 @media(max-width:768px){
-  .hamburger{display:block}
+  /* Hamburger on top-right */
+  .hamburger{display:block;position:absolute;top:18px;right:28px;z-index:1001;}
+  
   .nav-links{
-    display:flex;flex-direction:column;position:absolute;top:70px;
+    display:flex;flex-direction:column;position:absolute;top:60px;
     right:-100%;width:220px;background:rgba(255,255,255,0.95);
     padding:20px;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,.15);
     transition:right 0.3s ease;gap:14px;
   }
   .nav-links.active{right:28px}
   
-  nav>div{display:flex;justify-content:space-between;align-items:center;width:100%;}
+  nav>div{display:flex;width:100%;justify-content:flex-end;}
   
   header{text-align:center;grid-template-columns:1fr;margin-top:20px;}
   header div{margin:auto}
