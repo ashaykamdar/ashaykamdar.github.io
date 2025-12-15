@@ -19,11 +19,15 @@ nav{
   position:fixed;top:0;width:100%;
   background:rgba(255,255,255,.95);
   backdrop-filter:blur(10px);
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 28px;z-index:999
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap: wrap; /* allows wrapping to prevent overflow */
+  padding:18px 28px;
+  z-index:999
 }
 body.dark nav{background:rgba(2,6,23,.95)}
-nav a{margin-left:26px;font-weight:600}
+nav a{margin-left:20px;font-weight:600}
 
 /* HAMBURGER */
 .hamburger{
@@ -37,10 +41,11 @@ nav a{margin-left:26px;font-weight:600}
 .nav-links{
   display:flex;
   align-items:center;
+  flex-wrap: wrap; /* prevents theme switch overflow */
 }
 
 /* THEME SLIDER */
-.theme-switch{margin-left:26px}
+.theme-switch{margin-left:16px} /* smaller margin to prevent overflow */
 .theme-switch input{display:none}
 .theme-switch label{
   width:58px;height:30px;background:#c7d2fe;
@@ -131,25 +136,29 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
 
 @media(max-width:768px){
   .hamburger{display:block}
+
   .nav-links{
     display:none;
-    position:absolute;top:70px;right:20px;
-    background:white;padding:20px 26px;
+    position:absolute;
+    top:70px;
+    right:0;
+    left:0;
+    background:white;
+    padding:20px;
     border-radius:16px;
     flex-direction:column;
-    box-shadow:0 20px 40px rgba(0,0,0,.15)
+    align-items:flex-start;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
   }
   body.dark .nav-links{background:#020617}
-  .nav-links a{margin:14px 0}
+  .nav-links a{
+    margin:10px 0;
+  }
   .nav-links.active{display:flex}
 
-  .floating-chat{display:none}
-  .mobile-chat{display:block}
-
-  /* THEME SLIDER MOBILE FIX */
   .theme-switch{
-    margin-left:0;
-    margin-top:12px;
+    margin:10px 0 0 0;
+    align-self:flex-start;
   }
   .theme-switch label{
     width:50px;
@@ -164,6 +173,9 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
   .theme-switch input:checked + label::after{
     transform:translateX(24px);
   }
+
+  .floating-chat{display:none}
+  .mobile-chat{display:block}
 }
 </style>
 </head>
