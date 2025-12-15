@@ -15,7 +15,8 @@ a{text-decoration:none;color:inherit}
 
 /* NAVBAR */
 nav{
-  position:fixed;top:0;width:100%;
+  position:fixed;
+  top:0;width:100%;
   background:rgba(255,255,255,.95);
   backdrop-filter:blur(10px);
   display:flex;
@@ -23,6 +24,8 @@ nav{
   align-items:center;
   padding:18px 28px;
   z-index:999;
+  position:relative;
+  transition:0.3s;
 }
 body.dark nav{background:rgba(2,6,23,.95)}
 
@@ -33,11 +36,13 @@ nav strong{font-size:1.2rem}
   display:flex;
   align-items:center;
   flex-wrap:wrap;
+  transition:0.3s ease;
 }
 .nav-links a{
   margin-left:20px;
   font-weight:600;
   white-space:nowrap;
+  transition:0.3s;
 }
 
 /* HAMBURGER */
@@ -48,23 +53,25 @@ nav strong{font-size:1.2rem}
   padding:8px;
 }
 
-/* THEME TOGGLE FLOATING (Top-Right) */
+/* THEME TOGGLE INSIDE NAVBAR */
 .theme-switch{
-  position:fixed;
-  top:20px;
+  position:absolute;
   right:28px;
-  z-index:1000;
+  top:50%;
+  transform:translateY(-50%);
+  transition:0.3s ease;
 }
 .theme-switch input{display:none}
 .theme-switch label{
   width:58px;height:30px;background:#c7d2fe;
-  border-radius:50px;cursor:pointer;position:relative
+  border-radius:50px;cursor:pointer;position:relative;
+  transition:background 0.3s ease;
 }
 .theme-switch label::after{
   content:'☀';width:24px;height:24px;background:white;
   border-radius:50%;position:absolute;top:3px;left:3px;
   display:flex;align-items:center;justify-content:center;
-  transition:.3s
+  transition:transform 0.3s, content 0.3s;
 }
 .theme-switch input:checked+label{background:#2563eb}
 .theme-switch input:checked+label::after{
@@ -79,21 +86,24 @@ header{
   display:grid;grid-template-columns:1.2fr .8fr;
   gap:50px;align-items:center;
   background:linear-gradient(135deg,#2563eb,#4f46e5);
-  color:white;border-radius:24px;padding:70px
+  color:white;border-radius:24px;padding:70px;
+  transition:0.3s;
 }
 header img{
   width:260px;height:260px;border-radius:50%;
-  object-fit:cover;border:6px solid rgba(255,255,255,.4)
+  object-fit:cover;border:6px solid rgba(255,255,255,.4);
+  transition:0.3s;
 }
 
-h1{font-size:3.8rem}
-h2{margin:80px 0 24px;border-left:6px solid #2563eb;padding-left:14px}
+h1{font-size:3.8rem; transition:0.3s;}
+h2{margin:80px 0 24px;border-left:6px solid #2563eb;padding-left:14px; transition:0.3s;}
 
 /* CARDS */
 .card{
   background:#ffffff;padding:34px;border-radius:20px;
   box-shadow:0 15px 40px rgba(0,0,0,.08);
-  margin-bottom:30px
+  margin-bottom:30px;
+  transition:0.3s;
 }
 body.dark .card{background:#020617}
 
@@ -103,7 +113,7 @@ body.dark .card{background:#020617}
 .skill-bar span{
   display:block;height:100%;width:0;
   background:#2563eb;border-radius:20px;
-  transition:2s
+  transition:width 2s ease;
 }
 
 /* BUTTONS */
@@ -111,7 +121,8 @@ body.dark .card{background:#020617}
   display:inline-block;margin-top:26px;
   background:#0f172a;color:white;
   padding:16px 32px;border-radius:16px;
-  font-weight:600
+  font-weight:600;
+  transition:0.3s;
 }
 body.dark .btn{background:white;color:#020617}
 
@@ -120,7 +131,8 @@ body.dark .btn{background:white;color:#020617}
   position:fixed;bottom:28px;right:28px;
   background:#2563eb;color:white;
   padding:16px 22px;border-radius:18px;
-  font-weight:600;z-index:1000
+  font-weight:600;z-index:1000;
+  transition:0.3s;
 }
 
 /* MOBILE STICKY CHAT */
@@ -129,13 +141,14 @@ body.dark .btn{background:white;color:#020617}
   position:fixed;bottom:0;left:0;width:100%;
   background:#2563eb;color:white;
   text-align:center;padding:18px;
-  font-weight:700;z-index:1000
+  font-weight:700;z-index:1000;
+  transition:0.3s;
 }
 
 /* CONTACT ICONS */
 .icon{width:22px;height:22px;vertical-align:middle;margin-right:10px}
 
-footer{text-align:center;margin:90px 0 40px;opacity:.6}
+footer{text-align:center;margin:90px 0 40px;opacity:.6; transition:0.3s;}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -145,18 +158,34 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
 
 @media(max-width:768px){
   .hamburger{display:block}
+
   .nav-links{
-    display:none;
+    display:flex;
     flex-direction:column;
-    width:100%;
-    margin-top:10px;
+    position:absolute;
+    top:70px;
+    right:-100%;
+    width:220px;
+    background:rgba(255,255,255,0.95);
+    padding:20px;
+    border-radius:16px;
+    flex-wrap:nowrap;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    transition:right 0.3s ease;
   }
-  .nav-links.active{display:flex}
-  .nav-links a{margin:10px 0}
+  body.dark .nav-links{background:#020617}
+
+  .nav-links a{margin:14px 0;transition:0.3s;}
+  .nav-links.active{right:28px}
+
+  .theme-switch{
+    position:absolute;
+    top:18px;
+    right:28px;
+  }
+
   .floating-chat{display:none}
   .mobile-chat{display:block}
-  /* move toggle slightly for mobile */
-  .theme-switch{top:10px;right:16px;}
 }
 </style>
 </head>
@@ -174,13 +203,13 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
       <a href="case-studies.html">Case Studies</a>
       <a href="blogs.html">Blogs</a>
   </div>
-</nav>
 
-<!-- THEME TOGGLE -->
-<div class="theme-switch">
-  <input type="checkbox" id="toggle">
-  <label for="toggle"></label>
-</div>
+  <!-- THEME TOGGLE -->
+  <div class="theme-switch">
+    <input type="checkbox" id="toggle">
+    <label for="toggle"></label>
+  </div>
+</nav>
 
 <!-- CHAT BUTTONS -->
 <a class="floating-chat" href="https://calendly.com/your-link" target="_blank">💬 Let’s Chat</a>
