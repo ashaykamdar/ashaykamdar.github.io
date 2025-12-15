@@ -64,27 +64,32 @@ h2{
 /* TIMELINE */
 .timeline{
   position:relative;
-  padding-left:40px
+  padding-left:44px
 }
 .timeline::before{
   content:'';
-  position:absolute;left:12px;top:0;bottom:0;
+  position:absolute;left:14px;top:0;bottom:0;
   width:3px;background:#c7d2fe
 }
 .timeline-item{
   position:relative;
-  margin-bottom:40px
+  margin-bottom:42px
 }
 .timeline-item::before{
   content:'';
-  position:absolute;left:-33px;top:6px;
+  position:absolute;left:-36px;top:8px;
   width:14px;height:14px;
   background:#2563eb;border-radius:50%
 }
 .card{
-  background:#ffffff;padding:30px;
+  background:#ffffff;padding:32px;
   border-radius:18px;
   box-shadow:0 12px 30px rgba(0,0,0,.08)
+}
+.role-meta{
+  font-weight:600;
+  margin-bottom:10px;
+  opacity:.75
 }
 
 /* SKILLS */
@@ -103,12 +108,18 @@ h2{
 /* CONTACT */
 .contact-line{
   display:flex;
-  gap:26px;
   align-items:center;
+  gap:30px;
   flex-wrap:wrap;
   font-weight:600
 }
-.icon{width:20px;height:20px;vertical-align:middle;margin-right:8px}
+.icon{
+  width:20px;
+  height:20px;
+  vertical-align:middle;
+  margin-right:8px;
+  fill:currentColor
+}
 
 /* CHAT */
 .floating-chat{
@@ -152,6 +163,7 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
 
 <body>
 
+<!-- NAV -->
 <nav>
   <strong>Ashay Kamdar</strong>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -162,33 +174,39 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
   </div>
 </nav>
 
+<!-- CHAT -->
 <a class="floating-chat" href="https://calendly.com/your-link" target="_blank">💬 Let’s Chat</a>
 <a class="mobile-chat" href="https://calendly.com/your-link" target="_blank">💬 Let’s Chat</a>
 
 <div class="container">
 
+<!-- HERO -->
 <header>
   <div>
     <h1>Ashay Kamdar</h1>
     <p>
-      Product-focused professional with experience across B2C and enterprise products.
-      Strong in problem discovery, user research, execution, and driving measurable business impact.
+      Product Enthusiast with end-to-end experience shipping user-first B2C and enterprise products.
+      Thrive in ambiguity, with a bias for execution, problem-first thinking, and strong ownership.
     </p>
     <a href="resume.pdf" download class="btn">⬇ Download Resume</a>
   </div>
   <img src="profile.jpg">
 </header>
 
+<!-- WORK EXPERIENCE -->
 <h2>Work Experience</h2>
+
 <div class="timeline">
 
   <div class="timeline-item">
     <div class="card">
       <h3>ASBL — Associate Product Manager Intern</h3>
+      <div class="role-meta">Hyderabad, India · Aug 2025 – Present</div>
       <ul>
-        <li>Owned end-to-end internal platforms across planning, scheduling & contracts</li>
-        <li>Reduced task completion time by ~30% via UX redesign</li>
-        <li>Improved operational efficiency by ~40%</li>
+        <li>Led UX and workflow redesigns that cut task completion time by ~30%, improved navigation clarity, and drove higher adoption among site operations teams.</li>
+        <li>Strengthened operational efficiency by streamlining planning, scheduling, contract and manpower workflows, reducing manual coordination and dependency on external tools by 40%.</li>
+        <li>Owned end-to-end product lifecycle across web & mobile, ensuring clarity, alignment, and smooth delivery that reduced rework by 35%.</li>
+        <li>Improved system stability and release quality through structured QA and cross-team collaboration, reducing recurring issues by ~40%.</li>
       </ul>
     </div>
   </div>
@@ -196,54 +214,65 @@ footer{text-align:center;margin:90px 0 40px;opacity:.6}
   <div class="timeline-item">
     <div class="card">
       <h3>UPivot — Associate Product Manager Intern</h3>
+      <div class="role-meta">Bengaluru, India · May 2025 – Jul 2025</div>
       <ul>
-        <li>Conducted 50+ user interviews</li>
-        <li>Improved engagement by ~28%</li>
-        <li>Onboarded 1,200+ users</li>
+        <li>Interviewed 50+ users, mapped journeys, identified pain points, and created personas for product decisions.</li>
+        <li>Defined MVP scope, wrote PRDs with success metrics, and launched AI resume screening and feedback tools.</li>
+        <li>Collaborated with engineering and design to test prototypes and A/B test, reducing drop-offs by 25%.</li>
+        <li>Improved engagement by 28% and onboarded 1,200+ users using hypothesis-driven development.</li>
       </ul>
     </div>
   </div>
 
   <div class="timeline-item">
     <div class="card">
-      <h3>Vedanta Resources — Business Analyst</h3>
+      <h3>Vedanta Resources — Business Analyst (Marketing)</h3>
+      <div class="role-meta">Mumbai, India · Aug 2023 – Feb 2025</div>
       <ul>
-        <li>Drove ~5% market share growth</li>
-        <li>Improved profitability by ~23%</li>
-        <li>Automated pricing workflows</li>
+        <li>Analyzed large-scale sales data using SQL and Excel to drive growth.</li>
+        <li>Conducted market and competitive analysis, achieving a 5% market share increase.</li>
+        <li>Automated MCX–LME arbitrage tracking, boosting profitability by 23%.</li>
+        <li>Built BI dashboards and executive presentations for CXOs and investors.</li>
+        <li>Collaborated cross-functionally to automate order processing and pricing workflows, improving efficiency by 37%.</li>
       </ul>
     </div>
   </div>
 
 </div>
 
+<!-- SKILLS -->
 <h2>Skills</h2>
 <div class="skills-grid">
   <div class="skill-box">Product Discovery</div>
-  <div class="skill-box">User Research & Interviews</div>
-  <div class="skill-box">PRDs & Requirement Writing</div>
-  <div class="skill-box">Roadmapping</div>
+  <div class="skill-box">User Research</div>
+  <div class="skill-box">PRD Writing</div>
+  <div class="skill-box">Prioritization</div>
   <div class="skill-box">Agile & Scrum</div>
   <div class="skill-box">Stakeholder Management</div>
   <div class="skill-box">UX Collaboration</div>
-  <div class="skill-box">Data Analysis</div>
-  <div class="skill-box">SQL & Dashboards</div>
-  <div class="skill-box">Experimentation & A/B Testing</div>
-  <div class="skill-box">Go-to-Market</div>
-  <div class="skill-box">Metrics & OKRs</div>
+  <div class="skill-box">Analytics & SQL</div>
+  <div class="skill-box">A/B Testing</div>
+  <div class="skill-box">Experimentation</div>
+  <div class="skill-box">Roadmapping</div>
+  <div class="skill-box">Data Visualization</div>
 </div>
 
+<!-- CONTACT -->
 <h2>Contact</h2>
 <div class="card">
   <div class="contact-line">
     <span>
-      <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6Z"/></svg>
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6Zm0 4-8 5-8-5"/>
+      </svg>
       <a href="mailto:ashaykamdar1812@gmail.com">ashaykamdar1812@gmail.com</a>
     </span>
 
     <span>
-      <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 0 0 5Z"/></svg>
-      <a href="https://linkedin.com/in/ashaykamdar" target="_blank">LinkedIn</a>
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5ZM3 8.98h3.96V21H3ZM9.5 8.98H13v1.64h.05c.49-.93 1.68-1.9 3.45-1.9 3.69 0 4.37 2.43 4.37 5.6V21h-3.97v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9.5Z"/>
+      </svg>
+      <a href="https://www.linkedin.com/in/ashaykamdar" target="_blank">LinkedIn</a>
     </span>
   </div>
 </div>
