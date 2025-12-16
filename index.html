@@ -34,11 +34,20 @@ nav strong{font-size:1.2rem}
 
 /* HEADER */
 header{
-  display:grid;grid-template-columns:1.2fr .8fr;
-  gap:50px;align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  justify-items:center;   /* ✅ centers content horizontally */
   background:linear-gradient(135deg,#2563eb,#4f46e5);
-  color:white;border-radius:24px;padding:70px
+  color:white;
+  border-radius:24px;
+  padding:70px
 }
+header div{
+  max-width:600px;
+}
+
 header img{
   width:260px;height:260px;border-radius:50%;
   object-fit:cover;border:6px solid rgba(255,255,255,.4)
