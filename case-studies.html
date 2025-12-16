@@ -1,217 +1,171 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Studies | Ashay Kamdar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies | Ashay Kamdar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:#ffffff;color:#0f172a}
-a{text-decoration:none;color:inherit}
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+    }
 
-/* NAVBAR */
-nav{
-  position:fixed;top:0;width:100%;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(10px);
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 28px;z-index:999
-}
-nav strong{font-size:1.2rem}
+    nav {
+      padding: 18px 28px;
+      border-bottom: 1px solid #e5e7eb;
+      font-weight: 600;
+    }
+    nav a {
+      margin-right: 24px;
+      text-decoration: none;
+      color: inherit;
+    }
 
-/* NAV LINKS */
-.nav-links{display:flex;gap:22px}
-.nav-links a{font-weight:600}
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 22px;
+    }
 
-/* HAMBURGER */
-.hamburger{display:none;font-size:26px;cursor:pointer}
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 40px;
+    }
 
-/* CONTAINER */
-.container{max-width:1150px;margin:auto;padding:140px 22px 60px}
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
 
-/* PAGE HEADER */
-.page-header{
-  margin-bottom:60px;
-}
-.page-header h1{
-  font-size:3rem;
-  margin-bottom:12px;
-}
-.page-header p{
-  font-size:1.1rem;
-  max-width:720px;
-  line-height:1.6;
-  opacity:.85;
-}
+    .case-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 26px;
+      background: #fff;
+    }
 
-/* CASE STUDY GRID */
-.case-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:28px;
-}
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
 
-/* CASE CARD */
-.case-card{
-  background:#ffffff;
-  border-radius:20px;
-  padding:32px;
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-  transition:.3s;
-}
-.case-card:hover{
-  transform:translateY(-6px);
-}
+    .case-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
 
-.tag{
-  display:inline-block;
-  background:#e0e7ff;
-  color:#1e3a8a;
-  padding:6px 14px;
-  border-radius:999px;
-  font-size:.85rem;
-  font-weight:600;
-  width:max-content;
-}
+    .case-card p {
+      color: #475569;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
 
-.case-card h3{
-  font-size:1.35rem;
-}
+    .metrics {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
 
-.case-card p{
-  line-height:1.6;
-  opacity:.9;
-}
+    .metric {
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
 
-.metrics{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:10px;
-}
-.metric{
-  background:#f8fafc;
-  padding:10px 14px;
-  border-radius:12px;
-  font-weight:600;
-  font-size:.9rem;
-}
-
-/* CTA BUTTON */
-.case-btn{
-  margin-top:auto;
-  align-self:flex-start;
-  background:#0f172a;
-  color:white;
-  padding:12px 22px;
-  border-radius:14px;
-  font-weight:600;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .hamburger{display:block}
-  .nav-links{
-    display:none;
-    position:absolute;top:70px;right:20px;
-    background:white;padding:20px;
-    border-radius:16px;
-    flex-direction:column;
-    box-shadow:0 20px 40px rgba(0,0,0,.15)
-  }
-  .nav-links.active{display:flex}
-}
-</style>
+    .case-btn {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #2563eb;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-  <strong>Ashay Kamdar</strong>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="case-studies.html">Case Studies</a>
-    <a href="blogs.html">Blogs</a>
-  </div>
+  <a href="index.html">Home</a>
+  <a href="case-studies.html">Case Studies</a>
 </nav>
 
-<div class="container">
-
-<!-- PAGE HEADER -->
-<div class="page-header">
+<main class="container">
   <h1>Case Studies</h1>
-  <p>
-    A selection of real-world product problems I worked on — from discovery and user research
-    to execution, experimentation, and measurable business impact.
-  </p>
-</div>
 
-<!-- CASE STUDIES -->
-<div class="case-grid">
+  <div class="case-grid">
 
-  <!-- CASE 1 -->
-  <div class="case-card">
-    <span class="tag">Internal Platform · B2B</span>
-    <h3>Redesigning Planning & Scheduling Platform at ASBL</h3>
-    <p>
-      Led end-to-end redesign of internal planning and scheduling tools used by site operations teams,
-      focusing on usability, workflow efficiency, and adoption.
-    </p>
-    <div class="metrics">
-      <div class="metric">↓ 30% Task Time</div>
-      <div class="metric">↑ 40% Ops Efficiency</div>
+    <!-- CASE 1 -->
+    <div class="case-card">
+      <span class="tag">Strategy · B2B</span>
+      <h3>Regaining Market Share at Hindustan Zinc</h3>
+      <p>Built a Pan-India channel partner ecosystem to reverse market share decline.</p>
+      <div class="metrics">
+        <div class="metric">+5% Share</div>
+        <div class="metric">₹1,000 Cr</div>
+      </div>
+      <a class="case-btn" href="case-hzl-market-share.html">View Case Study →</a>
     </div>
-    <a class="case-btn" href="#">View Case Study</a>
-  </div>
 
-  <!-- CASE 2 -->
-  <div class="case-card">
-    <span class="tag">B2C · AI Product</span>
-    <h3>AI Resume Screening & Feedback Tool at UPivot</h3>
-    <p>
-      Worked on MVP definition and launch of AI-powered resume screening and feedback features
-      to improve job-seeker engagement and conversion.
-    </p>
-    <div class="metrics">
-      <div class="metric">50+ User Interviews</div>
-      <div class="metric">↑ 28% Engagement</div>
+    <!-- CASE 2 -->
+    <div class="case-card">
+      <span class="tag">Product · Digital</span>
+      <h3>Improving CSAT via Digital Sales Platform</h3>
+      <p>Launched India’s first digital sales platform for non-ferrous metals.</p>
+      <div class="metrics">
+        <div class="metric">+37% CSAT</div>
+      </div>
+      <a class="case-btn" href="case-hzl-digital-csat.html">View Case Study →</a>
     </div>
-    <a class="case-btn" href="#">View Case Study</a>
-  </div>
 
-  <!-- CASE 3 -->
-  <div class="case-card">
-    <span class="tag">Analytics · Enterprise</span>
-    <h3>Pricing & Arbitrage Automation at Vedanta</h3>
-    <p>
-      Built analytics workflows and automated MCX–LME arbitrage tracking to support pricing,
-      decision-making, and executive reporting.
-    </p>
-    <div class="metrics">
-      <div class="metric">↑ 23% Profitability</div>
-      <div class="metric">SQL + Dashboards</div>
+    <!-- CASE 3 -->
+    <div class="case-card">
+      <span class="tag">Automation · Finance</span>
+      <h3>Automating MCX–LME Arbitrage</h3>
+      <p>Automated arbitrage tracking to prevent high-value opportunity losses.</p>
+      <div class="metrics">
+        <div class="metric">+23% Profit</div>
+        <div class="metric">₹12 LPA Saved</div>
+      </div>
+      <a class="case-btn" href="case-hzl-arbitrage.html">View Case Study →</a>
     </div>
-    <a class="case-btn" href="#">View Case Study</a>
+
+    <!-- CASE 4 -->
+    <div class="case-card">
+      <span class="tag">0→1 · AI</span>
+      <h3>AI Mock Interview Platform (UPivot)</h3>
+      <p>Built an AI-driven mock interview product from scratch.</p>
+      <div class="metrics">
+        <div class="metric">1,200 Users</div>
+        <div class="metric">+28% Engagement</div>
+      </div>
+      <a class="case-btn" href="case-upivot-ai-mock.html">View Case Study →</a>
+    </div>
+
+    <!-- CASE 5 -->
+    <div class="case-card">
+      <span class="tag">B2B SaaS · Execution</span>
+      <h3>Improving Execution Visibility at ASBL</h3>
+      <p>Turned a construction SaaS platform into a single source of truth.</p>
+      <div class="metrics">
+        <div class="metric">−30% Task Time</div>
+      </div>
+      <a class="case-btn" href="case-asbl-execution.html">View Case Study →</a>
+    </div>
+
   </div>
-
-</div>
-
-</div>
-
-<script>
-function toggleMenu(){
-  document.getElementById('navLinks').classList.toggle('active');
-}
-</script>
+</main>
 
 </body>
 </html>
